@@ -1,13 +1,11 @@
 package com.sufi.pacienteWindow;
 
-import java.awt.EventQueue;
 import java.awt.Font;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
-import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -22,23 +20,6 @@ public class ClinicaWindow extends JFrame {
     public JLabel getLblNumPacientes() {
         return lblNumPacientes;
     }
-
-    /**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-                    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-					ClinicaWindow frame = new ClinicaWindow();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
@@ -78,6 +59,7 @@ public class ClinicaWindow extends JFrame {
 		lblPacientesRestantes.setBounds(38, 201, 203, 34);
 		contentPane.add(lblPacientesRestantes);
 		
+		lblNumPacientes.setText(String.valueOf(listaDeEspera.getPacientes().size()));
 		lblNumPacientes.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNumPacientes.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNumPacientes.setBounds(237, 204, 31, 28);
@@ -96,9 +78,14 @@ public class ClinicaWindow extends JFrame {
     }
 
     protected void nextPressed() {
+		// Open TurnoDialog
+		TurnoDialog dialog = new TurnoDialog(this, true);
+        dialog.setLocationRelativeTo(this);
+        dialog.setVisible(true);
     }
 
     protected void addPressed() {
+		// Open AddPatientDialog
         AddPatientDialog dialog = new AddPatientDialog(this, true);
         dialog.setLocationRelativeTo(this);
         dialog.setVisible(true);

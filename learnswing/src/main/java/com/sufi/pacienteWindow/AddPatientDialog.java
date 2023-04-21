@@ -70,7 +70,7 @@ public class AddPatientDialog extends JDialog {
                 getRootPane().setDefaultButton(okButton);
             }
             {
-                JButton cancelButton = new JButton("Cancel");
+                JButton cancelButton = new JButton("Cancelar");
                 cancelButton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         cancelPressed();
@@ -88,7 +88,7 @@ public class AddPatientDialog extends JDialog {
         // If yes, show a default message dialog
         // Also update the lblNumPacientes with the new number of patients
         if (this.textFieldNombre.getText().isEmpty() || this.textFieldID.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Please fill all the fields", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Por favor rellena todos los campos", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
             Paciente paciente = new Paciente(this.textFieldNombre.getText(), this.textFieldID.getText());
             ((ClinicaWindow) this.getParent()).getListaDeEspera().addPaciente(paciente);
