@@ -4,7 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.UIManager;
 
-import com.sufi.pacienteWindow.ClinicaWindow;
+import com.sufi.WIndowExercises.CountFactorial;
 
 /**
  * Hello world!
@@ -22,7 +22,7 @@ public class App
 			public void run() {
 				try {
                     UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-					ClinicaWindow frame = new ClinicaWindow();
+					CountFactorial frame = new CountFactorial();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
