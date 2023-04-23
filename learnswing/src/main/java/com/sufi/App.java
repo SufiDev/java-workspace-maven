@@ -4,12 +4,8 @@ import java.awt.EventQueue;
 
 import javax.swing.UIManager;
 
-import com.sufi.WIndowExercises.CountFactorial;
+import com.sufi.WIndowExercises.AccumulateSum;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     
@@ -22,7 +18,7 @@ public class App
 			public void run() {
 				try {
                     UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-					CountFactorial frame = new CountFactorial();
+					AccumulateSum frame = new AccumulateSum();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
