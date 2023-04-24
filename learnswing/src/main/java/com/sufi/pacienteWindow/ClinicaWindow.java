@@ -4,6 +4,7 @@ import java.awt.Font;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+// import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
@@ -79,9 +80,13 @@ public class ClinicaWindow extends JFrame {
 
     protected void nextPressed() {
 		// Open TurnoDialog
-		TurnoDialog dialog = new TurnoDialog(this, true);
-        dialog.setLocationRelativeTo(this);
-        dialog.setVisible(true);
+		try {
+			TurnoDialog dialog = new TurnoDialog(this, true);
+			dialog.setLocationRelativeTo(this);
+			dialog.setVisible(true);
+		} catch (Exception e) {
+			// JOptionPane.showMessageDialog(this, "No hay pacientes en la lista de espera");
+		}
     }
 
     protected void addPressed() {

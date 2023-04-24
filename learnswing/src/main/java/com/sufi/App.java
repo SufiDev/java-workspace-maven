@@ -4,7 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.UIManager;
 
-import com.sufi.WIndowExercises.AccumulateSum;
+import com.sufi.agendaWindow.AgendaWindow;
 
 public class App 
 {
@@ -18,7 +18,7 @@ public class App
 			public void run() {
 				try {
                     UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-					AccumulateSum frame = new AccumulateSum();
+					AgendaWindow frame = new AgendaWindow();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
